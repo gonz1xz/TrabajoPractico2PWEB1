@@ -40,19 +40,22 @@ function ocultarError() {
 }
 
 function validarText(nombre, apellido, empresa, mensaje) {
+  const regexLetras = /^[a-zA-Z]+$/;
+  const regexNumeros = /^\d+$/;
+
   if (nombre.trim() !== '' && apellido.trim() !== '' && empresa.trim() !== '' && mensaje.trim() !== '') {
-    if (!isNaN(nombre) || !isNaN(apellido) || !isNaN(empresa) || !isNaN(mensaje)) {
-      if (!isNaN(nombre)) {
-        mostrarError('El campo "Nombre" no debe contener números');
+    if (!regexLetras.test(nombre) || !regexLetras.test(apellido) || !regexLetras.test(empresa) || regexNumeros.test(mensaje)) {
+      if (!regexLetras.test(nombre)) {
+        mostrarError('El campo "Nombre" solo debe contener letras');
       }
-      if (!isNaN(apellido)) {
-        mostrarError('El campo "Apellido" no debe contener números');
+      if (!regexLetras.test(apellido)) {
+        mostrarError('El campo "Apellido" solo debe contener letras');
       }
-      if (!isNaN(empresa)) {
-        mostrarError('El campo "Empresa" no debe contener números');
+      if (!regexLetras.test(empresa)) {
+        mostrarError('El campo "Empresa" solo debe contener letras');
       }
-      if (!isNaN(mensaje)) {
-        mostrarError('El campo "Mensaje" no debe contener números');
+      if (regexNumeros.test(mensaje)) {
+        mostrarError('El campo "Mensaje" no debe contener solo numeros');
       }
       return false;
     } else {
@@ -64,6 +67,7 @@ function validarText(nombre, apellido, empresa, mensaje) {
     return false;
   }
 }
+
 
 function agregarPropuesta(event) {
   event.preventDefault();
