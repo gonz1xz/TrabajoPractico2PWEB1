@@ -6,7 +6,7 @@ function resetForm() {
 
 function validarCamposVacios(nombre, apellido, email, empresa, sueldo, mensaje) {
   if (nombre.length === 0 || apellido.length === 0 || email.length === 0 || empresa.length === 0 || sueldo.length === 0 || mensaje.length === 0) {
-    mostrarError();
+    mostrarError('Porfavor, completa todos los campos');
     return false;
   } else {
     ocultarError();
@@ -28,9 +28,9 @@ function validarEmail(email) { // Valido emails con un regex
   }
 }
 
-function mostrarError() {
+function mostrarError(string) {
   let alerta = document.getElementById("datos-invalidos");
-  alerta.textContent = "Por favor, ingrese todos los datos correctamente";
+  alerta.textContent = string;
   alerta.style.display = 'block';
 }
 
@@ -39,17 +39,28 @@ function ocultarError() {
   alerta.style.display = "none";
 }
 
-function validarText(nombre, apellido, empresa, mensaje){
-  if(nombre.trim() !== '' && apellido.trim() !== '' && empresa.trim() !== '' && mensaje.trim() !== ''){  //Elimino espacios en blanco con trim antes de comprobar si no son numeros
-    if(!isNaN(nombre) || !isNaN(apellido) || !isNaN(empresa) || !isNaN(mensaje)){
-      mostrarError();
+function validarText(nombre, apellido, empresa, mensaje) {
+  if (nombre.trim() !== '' && apellido.trim() !== '' && empresa.trim() !== '' && mensaje.trim() !== '') {
+    if (!isNaN(nombre) || !isNaN(apellido) || !isNaN(empresa) || !isNaN(mensaje)) {
+      if (!isNaN(nombre)) {
+        mostrarError('El campo "Nombre" no debe contener números');
+      }
+      if (!isNaN(apellido)) {
+        mostrarError('El campo "Apellido" no debe contener números');
+      }
+      if (!isNaN(empresa)) {
+        mostrarError('El campo "Empresa" no debe contener números');
+      }
+      if (!isNaN(mensaje)) {
+        mostrarError('El campo "Mensaje" no debe contener números');
+      }
       return false;
-    } else{
+    } else {
       ocultarError();
       return true;
     }
   } else {
-    mostrarError();
+    mostrarError('Todos los campos son obligatorios');
     return false;
   }
 }
