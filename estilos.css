@@ -1,0 +1,198 @@
+
+/* GLOBALES */
+
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+
+.filaprincipal{
+    background-color: rgb(145, 141, 141);
+    color: white;
+
+}
+
+
+
+/*Header*/
+
+#img{
+    width: 260px;
+    border-radius: 5%;
+}
+
+#foto{
+    display: flex;
+    justify-content: center;
+}
+
+
+.encabezado{
+    background-color: rgb(0, 0, 0, 0.3);
+    align-items: center;
+    text-align: center;
+}
+
+.encabezado h1{
+    font-size: 65px;
+}
+
+.encabezado h2{
+    font-size: 40px;
+}
+
+
+#nom{
+    font-size: 40px;
+    text-align: center;
+
+}
+
+#lic{
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+/*Descripcion*/
+
+.datos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0px 50px 0px;
+}
+
+#datospersonales{
+    font-size: 20px;
+}
+
+#sobremi{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+
+#redes{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+#descripcion{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/*Main*/
+
+#main{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+#educacion{
+    font-size: 20px;
+}
+
+#experencia{
+    font-size: 20px;
+
+
+}
+
+/*Habilidades*/
+
+.icon-text{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.container-edit{
+    margin: 20px 0px 20px 0px;
+}
+
+
+/*Contacto*/
+
+.button{
+    margin-bottom: 10px;
+}
+
+.card{
+    margin: 2rem;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+.card h3{
+    text-align: center;
+}
+
+form{
+    margin: 1rem;
+}
+
+label{
+    font-size: 1.2rem;
+}
+
+/*Propuestas*/
+
+.propuestas{
+    text-align: start;
+}
+
+.mensaje{
+    list-style: none;
+    margin: 20px 33px 20px 0px;
+}
+
+
+.datos-reclutador{
+    background-color: #282936;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+}
+
+
+.mensaje-propuesta{
+    background-color: #d3d3d3;
+    border-radius: 0px 0px 0px 10px;
+}
+
+.container-mensaje{
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: black 0.1px 0.1px 1px;
+    font-size: 1.1rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button{ 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+/*footer*/
+footer{
+    background-color: gainsboro;
+    color: #000000;
+    text-align: center;
+    padding-bottom: 1px;
+    font-size: 1.5rem;
+}
+
+
+/*error*/
+
+#datos-invalidos{
+    display: none;
+}
